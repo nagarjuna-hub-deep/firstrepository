@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Has_Support_Plan__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Sales users use this field to indicate to Support which customers have support plans</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this customer have a current support plan? Check this box when you sell a support plan to this customer</inlineHelpText>
+        <label>Has Support Plan</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Support_Plan_Expiration_Date__c</fullName>
+        <description>Expiration date of current support plan</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When is the current support plan due for renewal?</inlineHelpText>
+        <label>Support Plan Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <validationRules>
+        <fullName>Support_plan_expiration_date_required</fullName>
+        <active>true</active>
+        <description>Support plan expiration date is required when account is marked as having support plan.</description>
+        <errorConditionFormula>Has_Support_Plan__c = True &amp;&amp; ISBLANK(Support_Plan_Expiration_Date__c)</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>You must enter an expiration date when an account has a support plan.</errorMessage>
+    </validationRules>
+</CustomObject>

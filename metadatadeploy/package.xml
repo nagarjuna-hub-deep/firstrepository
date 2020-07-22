@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types>
+    <name>CustomField</name>
+    <members>Account.Has_Support_Plan__c</members>
+    <members>Account.Support_Plan_Expiration_Date__c</members>
+  </types>
+  <types>
+    <name>ValidationRule</name>
+    <members>Account.Support_plan_expiration_date_required</members>
+  </types>
+  <version>48.0</version>
+</Package>
